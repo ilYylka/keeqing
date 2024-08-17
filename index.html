@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1love - Front-End Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/anim.css">
+    <link rel="stylesheet" href="css/ligthThemeanim.css">
+</head>
+<body>
+    <header>
+        <div class="avatar">
+            <img src="avatar.jpg" alt="Кэ Цин">
+        </div>
+        <h1>Привет, я 1love</h1>
+        <p>Front-End разработчик</p>
+        <a href="https://t.me/loveindreams13" class="telegram-link">Мой Телеграм</a>
+    </header>
+
+    <!-- Секция "Обо мне" -->
+    <section class="about-me">
+        <h2>Обо мне</h2>
+        <p>Я опытный Front-End разработчик с глубоким знанием HTML, CSS, JavaScript, и различных фреймворков. Моя цель — создавать интерактивные, адаптивные и визуально привлекательные интерфейсы. Всегда в поиске новых технологий и подходов для улучшения пользовательского опыта.</p>
+    </section>
+
+    <!-- Секция "Навыки" -->
+    <section class="skills">
+        <h2>Мои навыки</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="icons/html5.png" alt="HTML5">
+                <p>HTML5</p>
+            </div>
+            <div class="skill">
+                <img src="icons/css3.png" alt="CSS3">
+                <p>CSS3</p>
+            </div>
+            <div class="skill">
+                <img src="icons/js.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <img src="icons/react.png" alt="React">
+                <p>React</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="bubbles">
+    <div class="bubble" style="--i:1;"></div>
+    <div class="bubble" style="--i:2;"></div>
+    <div class="bubble" style="--i:3;"></div>
+    <div class="bubble" style="--i:4;"></div>
+    <div class="bubble" style="--i:5;"></div>
+    <div class="bubble" style="--i:6;"></div>
+    <div class="bubble" style="--i:7;"></div>
+</div>
+
+
+<button id="theme-toggle">
+    <img src="icons/sun.png" alt="Сменить тему" id="theme-icon">
+</button>
+
+    <script src="js/light-dark=theme.js">
+        // Функция для переключения темы
+const themeToggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Проверяем локальное хранилище для текущей темы
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    body.classList.add(currentTheme);
+}
+
+// Устанавливаем и сохраняем выбранную тему
+themeToggleButton.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light-mode');
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+    }
+});
+
+    </script>
+</body>
+</html>
